@@ -1,0 +1,134 @@
+
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f6f3;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Mobile layout */
+.wrapper {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Named grid areas */
+.header {
+    grid-area: header;
+    background-color: #e8dff5;
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #fce1e4;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.nav h2 {
+    margin-bottom: 15px;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav li {
+    margin-bottom: 12px;
+}
+
+.nav a {
+    color: #333;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.main {
+    grid-area: main;
+}
+
+/* Content cards */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+}
+
+.card1 {
+    background-color: #e3f0ea;
+}
+
+.card2 {
+    background-color: #fff0db;
+}
+
+.card3 {
+    background-color: #e5eaf8;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #e8dff5;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+
+    .wrapper {
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+        grid-template-columns: 220px 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card1 {
+        grid-column: 1 / -1;
+    }
+}
